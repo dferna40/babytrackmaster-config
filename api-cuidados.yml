@@ -5,8 +5,8 @@ spring:
   application:
     name: api-cuidados
   datasource:
-    url: jdbc:mysql://localhost:3306/cuidados_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-    username: ${DB_USER:root}
-    password: ${DB_PASSWORD:root}
+    url: jdbc:mysql://127.0.0.1:3306/api_cuidado_db?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+    username: api_cuidados_db
+    password: apiCuidadosdb
   jpa:
-    show-sql: false
+    show-sql: true

@@ -1,0 +1,14 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: api-hitos
+  datasource:
+    url: jdbc:mysql://localhost:3306/hitos_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:root}
+# Para subida de imágenes más adelante
+storage:
+  images:
+    base-path: ${IMAGES_PATH:./uploads/hitos}

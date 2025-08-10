@@ -1,0 +1,39 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      default-filters:
+        - RemoveRequestHeader=Cookie
+      routes:
+        - id: usuarios
+          uri: http://localhost:8080
+          predicates:
+            - Path=/api/v1/usuarios/**,/auth/**   # ajusta a tus paths reales
+        - id: cuidados
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/v1/cuidados/**
+        - id: gastos
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/v1/gastos/**
+        - id: hitos
+          uri: http://localhost:8083
+          predicates:
+            - Path=/api/v1/hitos/**
+        - id: citas
+          uri: http://localhost:8084
+          predicates:
+            - Path=/api/v1/citas/**
+        - id: diario
+          uri: http://localhost:8085
+          predicates:
+            - Path=/api/v1/diario/**
+        - id: rutinas
+          uri: http://localhost:8086
+          predicates:
+            - Path=/api/v1/rutinas/**

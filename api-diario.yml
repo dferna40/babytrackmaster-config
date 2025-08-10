@@ -1,0 +1,14 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: api-diario
+  datasource:
+    url: jdbc:mysql://localhost:3306/diario_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:root}
+
+storage:
+  images:
+    base-path: ${IMAGES_PATH:./uploads/diario}

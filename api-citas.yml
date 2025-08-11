@@ -6,7 +6,7 @@ spring:
     name: api-citas
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/api_citas_db?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
-    username: api_citas_db_user
+    username: api_citas_db
     password: apiCitasdb
   jpa:
     show-sql: true

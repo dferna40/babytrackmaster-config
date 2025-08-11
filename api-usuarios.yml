@@ -4,9 +4,29 @@ server:
 spring:
   application:
     name: api-usuarios
+
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/api_usuario_db?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
     username: api_usuario_db
     password: apiUsuariodb
+
   jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+
+app:
+  jwt:
+    # Genera un secreto base64 de >= 256 bits. Ejemplo SOLO para dev:
+    secret: dGhpc19pc19hX3NhZmVfZGV2X3NlY3JldF9iYXNlNjQ=
+    expiration-ms: 259200000  # 3 días
+

@@ -3,11 +3,11 @@ server:
 
 spring:
   application:
-    name: api-usuarios
+    name: api-citas
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/api_citas_db?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
-    username: api_usuario_db
-    password: apiUsuariodb
+    username: api_citas_db_user
+    password: apiCitasdb
   jpa:
     show-sql: true
 
@@ -22,3 +22,4 @@ spring:
           auth: true
           starttls:
             enable: true
+

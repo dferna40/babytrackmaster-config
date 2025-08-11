@@ -12,21 +12,18 @@ spring:
 
   jpa:
     show-sql: true
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        format_sql: true
 
+# 👇 ESTA SECCIÓN ES LA QUE FALTA EN TU JSON
+app:
+  jwt:
+    secret: dGhpc19pc19hX3NhZmVfZGV2X3NlY3JldF9iYXNlNjQ=
+    expiration-ms: 259200000
+
+# (opcional)
 springdoc:
   api-docs:
     enabled: true
   swagger-ui:
     path: /swagger-ui.html
 
-app:
-  jwt:
-    # Genera un secreto base64 de >= 256 bits. Ejemplo SOLO para dev:
-    secret: dGhpc19pc19hX3NhZmVfZGV2X3NlY3JldF9iYXNlNjQ=
-    expiration-ms: 259200000  # 3 días
 

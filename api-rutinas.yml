@@ -5,6 +5,6 @@ spring:
   application:
     name: api-rutinas
   datasource:
-    url: jdbc:mysql://localhost:3306/rutinas_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-    username: ${DB_USER:root}
-    password: ${DB_PASSWORD:root}
+    url: jdbc:mysql://127.0.0.1:3306/api_rutinas_db?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+    username: api_rutinas_db
+    password: apiRutinasdb

@@ -1,0 +1,41 @@
+server:
+  port: 8087
+
+spring:
+  application:
+    name: api-bff
+  profiles:
+    active: default
+  cloud:
+    config:
+      uri: http://localhost:8888
+
+feign:
+  hystrix:
+    enabled: true
+
+# URLs de microservicios internos (modo local)
+services:
+  api-cuidados: http://localhost:8081
+  api-citas: http://localhost:8084
+  api-rutinas: http://localhost:8086
+#  profile-service: http://localhost:8091
+
+jwt:
+  secret: ${JWT_SECRET:mi_clave_secreta_segura}
+  expiration: 3600000 # 1 hora en milisegundos
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    com.babytrackmaster.apibff: DEBUG

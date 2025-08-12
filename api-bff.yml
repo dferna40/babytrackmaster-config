@@ -5,7 +5,7 @@ spring:
   application:
     name: api-bff
   profiles:
-    active: default
+    active: dev
   cloud:
     config:
       uri: http://localhost:8888

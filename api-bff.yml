@@ -1,14 +1,9 @@
-server:
-  port: 8087
-
 spring:
   application:
     name: api-bff
-  profiles:
-    active: dev
-  cloud:
-    config:
-      uri: http://localhost:8888
+
+server:
+  port: 8087
 
 feign:
   hystrix:
@@ -16,14 +11,14 @@ feign:
 
 # URLs de microservicios internos (modo local)
 services:
-  api-cuidados: http://localhost:8081
-  api-citas: http://localhost:8084
-  api-rutinas: http://localhost:8086
+  cuidados-service: http://localhost:8081
+  citas-service: http://localhost:8084
+  rutinas-service: http://localhost:8086
 #  profile-service: http://localhost:8091
 
 jwt:
-  secret: ${JWT_SECRET:mi_clave_secreta_segura}
-  expiration: 3600000 # 1 hora en milisegundos
+  secret: dGhpc19pc19hX3NhZmVfZGV2X3NlY3JldF9iYXNlNjQ=
+  expiration: 3600000 # 1 hora en ms
 
 management:
   endpoints:

@@ -29,3 +29,9 @@ springdoc:
     enabled: true
   swagger-ui:
     path: /swagger-ui.html
+
+# application.yml (o en el config-server del perfil dev)
+logging:
+  level:
+    org.springdoc: DEBUG
+    org.springframework.web: INFO

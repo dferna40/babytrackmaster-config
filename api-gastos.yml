@@ -2,8 +2,6 @@ server:
   port: 8082
 
 spring:
-  application:
-    name: api-gastos
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/api_gastos_db?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
     username: api_gastos_db
@@ -14,7 +12,7 @@ spring:
     properties:
       hibernate.format_sql: true
       hibernate.jdbc.time_zone: UTC
-    
+
 management:
   endpoints:
     web:
@@ -24,7 +22,7 @@ management:
 security:
   jwt:
     secret: dGhpc19pc19hX3NhZmVfZGV2X3NlY3JldF9iYXNlNjQ=
-    expiration-ms: 259200000
+    expiration-ms: 259200000  # ⇐ o 'expiration' si prefieres Opción A
 
 springdoc:
   api-docs:
@@ -32,9 +30,8 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
 
-# application.yml (o en el config-server del perfil dev)
 logging:
   level:
     org.springdoc: DEBUG
     org.springframework.web: INFO
-    org.springframework.security: DEBUG    
+    org.springframework.security: DEBUG

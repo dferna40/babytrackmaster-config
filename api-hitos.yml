@@ -8,7 +8,30 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/api_hitos_db?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
     username: api_hitos_db
     password: apiHitosdb
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.format_sql: true
+      hibernate.jdbc.time_zone: UTC
 # Para subida de imágenes más adelante
 storage:
   images:
     base-path: ${IMAGES_PATH:./uploads/hitos}
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+security:
+  jwt:
+    secret: dGhpc19pc19hX3NhZmVfZGV2X3NlY3JldF9iYXNlNjQ=
+    expiration-ms: 259200000
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html

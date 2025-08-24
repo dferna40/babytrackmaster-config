@@ -9,7 +9,11 @@ spring:
     username: api_citas_db
     password: apiCitasdb
   jpa:
-    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.format_sql: true
+      hibernate.jdbc.time_zone: UTC
 
   mail:
     host: ${SMTP_HOST:smtp.mailtrap.io}
@@ -22,4 +26,28 @@ spring:
           auth: true
           starttls:
             enable: true
+            
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+security:
+  jwt:
+    secret: dGhpc19pc19hX3NhZmVfZGV2X3NlY3JldF9iYXNlNjQ=
+    expiration-ms: 259200000
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+
+# application.yml (o en el config-server del perfil dev)
+logging:
+  level:
+    org.springdoc: DEBUG
+    org.springframework.web: INFO
+    org.springframework.security: DEBUG
 

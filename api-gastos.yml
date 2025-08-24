@@ -22,7 +22,7 @@ management:
 security:
   jwt:
     secret: dGhpc19pc19hX3NhZmVfZGV2X3NlY3JldF9iYXNlNjQ=
-    expiration-ms: 259200000  # ⇐ o 'expiration' si prefieres Opción A
+    expiration-ms: 259200000
 
 springdoc:
   api-docs:

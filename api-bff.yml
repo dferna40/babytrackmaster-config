@@ -11,9 +11,14 @@ feign:
 
 # URLs de microservicios internos (modo local)
 services:
-  cuidados-service: http://localhost:8081
-  citas-service: http://localhost:8084
-  rutinas-service: http://localhost:8086
+  usuarios-service: http://localhost:8080/api/v1
+  cuidados-service: http://localhost:8081/api/v1
+  gastos-service: http://localhost:8082/api/v1
+  hitos-service: http://localhost:8083/api/v1
+  citas-service: http://localhost:8084/api/v1
+  diario-service: http://localhost:8085/api/v1
+  rutinas-service: http://localhost:8086/api/v1
+ 
 #  profile-service: http://localhost:8091
 
 jwt:
@@ -28,9 +33,22 @@ management:
   endpoint:
     health:
       show-details: always
+      
+# CORS simple para React en dev
+cors:
+  allowed-origins: "http://localhost:5173,http://localhost:3000"
+  allowed-methods: "GET,POST,PUT,DELETE,OPTIONS"
+  allowed-headers: "*"
+  allow-credentials: true
+      
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
 
 logging:
   level:
-    root: INFO
-    org.springframework.web: DEBUG
-    com.babytrackmaster.apibff: DEBUG
+    org.springdoc: DEBUG
+    org.springframework.web: INFO
+    org.springframework.security: DEBUG

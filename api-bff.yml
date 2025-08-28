@@ -10,14 +10,15 @@ feign:
     enabled: true
 
 # URLs de microservicios internos (modo local)
-services:
-  usuarios-service: http://localhost:8080/api/v1
-  cuidados-service: http://localhost:8081/api/v1
-  gastos-service: http://localhost:8082/api/v1
-  hitos-service: http://localhost:8083/api/v1
-  citas-service: http://localhost:8084/api/v1
-  diario-service: http://localhost:8085/api/v1
-  rutinas-service: http://localhost:8086/api/v1
+bff:
+  endpoints:
+      usuarios: http://localhost:8080/api/v1
+      cuidados: http://localhost:8081/api/v1
+      gastos: http://localhost:8082/api/v1
+      hitos: http://localhost:8083/api/v1
+      citas: http://localhost:8084/api/v1
+      diario: http://localhost:8085/api/v1
+      rutinas: http://localhost:8086/api/v1
  
 #  profile-service: http://localhost:8091
 

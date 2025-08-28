@@ -21,9 +21,10 @@ services:
  
 #  profile-service: http://localhost:8091
 
-jwt:
-  secret: dGhpc19pc19hX3NhZmVfZGV2X3NlY3JldF9iYXNlNjQ=
-  expiration: 3600000 # 1 hora en ms
+security:
+  jwt:
+    secret: dGhpc19pc19hX3NhZmVfZGV2X3NlY3JldF9iYXNlNjQ=
+    expiration-ms: 259200000
 
 management:
   endpoints:

@@ -19,8 +19,7 @@ app:
     expiration-ms: 259200000
 
 google:
-  # Usar SIEMPRE la clave en notación de propiedad
-  client-id: ${google.client-id:}
+  client-id: ${GOOGLE_CLIENT_ID:default-client-id}
 
 springdoc:
   api-docs:

@@ -20,6 +20,10 @@ app:
 
 google:
   client-id: ${GOOGLE_CLIENT_ID:default-client-id}
+  
+facebook:
+  client-id: ${FACEBOOK_CLIENT_ID:}
+  client-secret: ${FACEBOOK_CLIENT_SECRET:}
 
 springdoc:
   api-docs:

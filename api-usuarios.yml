@@ -6,12 +6,17 @@ spring:
     name: api-usuarios
 
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/api_usuario_db?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3306/api_usuario_db?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Europe/Madrid
     username: api_usuario_db
     password: apiUsuariodb
 
   jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.format_sql: true
+      hibernate.jdbc.time_zone: Europe/Madrid  
 
 app:
   jwt:
